@@ -5,7 +5,7 @@
 # __________________________________/
 
 bl_info = {
-        "name": "W_Mesh_28x",
+        "name": "WonderMesh",
         "category": "Object",
         "author": "Vit Prochazka",
         "version": (1, 0),
