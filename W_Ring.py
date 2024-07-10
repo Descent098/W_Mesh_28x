@@ -207,7 +207,8 @@ class Make_WRing(bpy.types.Operator):
         object_utils.object_data_add(context, mesh, operator=None)
 
         bpy.ops.object.shade_smooth()
-        context.object.data.use_auto_smooth = True
+        if bpy.app.version < (4,0,0): # Removed in 4.1
+            context.object.data.use_auto_smooth = True
         return {'FINISHED'}
 
 # create UI panel

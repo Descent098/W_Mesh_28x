@@ -223,8 +223,9 @@ class Make_WCapsule(bpy.types.Operator):
         wD.wType = 'WCAPSULE'
 
         bpy.ops.object.shade_smooth()
-        context.object.data.use_auto_smooth = True
-        context.object.data.auto_smooth_angle = 1.0
+        if bpy.app.version < (4,0,0): # Removed in 4.1
+            context.object.data.use_auto_smooth = True
+            context.object.data.auto_smooth_angle = 1.0
         return {'FINISHED'}
 
 # create UI panel
